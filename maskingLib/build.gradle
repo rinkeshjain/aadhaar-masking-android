@@ -1,6 +1,24 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            fullRelease(MavenPublication) {
+                // Applies the component for the release build variant.
+                from(components["release"])
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = "com.rinkesh.maskinglib"
+                artifactId = "aadhaarmask"
+                version = "0.0.1"
+            }
+        }
+    }
 }
 
 android {
