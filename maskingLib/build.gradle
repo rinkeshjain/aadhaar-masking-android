@@ -4,22 +4,27 @@ plugins {
     id 'maven-publish'
 }
 
-afterEvaluate {
+group = 'com.github.rinkeshjain'
+version = '1.0'
+
+
     publishing {
+
         publications {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
                 // Applies the component for the release build variant.
-                from(components["release"])
-
                 // You can then customize attributes of the publication as shown below.
-                groupId = "com.rinkesh.maskinglib"
-                artifactId = "aadhaarmask"
+                groupId = "com.github.rinkeshjain"
+                artifactId = "aadhaar-masking-android"
                 version = "0.0.1"
+                afterEvaluate {
+
+                }
             }
         }
     }
-}
+
 
 android {
     namespace 'com.rinkesh.maskinglib'
