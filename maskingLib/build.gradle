@@ -8,7 +8,7 @@ afterEvaluate {
     publishing {
         publications {
             // Creates a Maven publication called "release".
-            fullRelease(MavenPublication) {
+            mavenJava(MavenPublication) {
                 // Applies the component for the release build variant.
                 from(components["release"])
 
@@ -16,6 +16,14 @@ afterEvaluate {
                 groupId = "com.rinkesh.maskinglib"
                 artifactId = "aadhaarmask"
                 version = "0.0.1"
+                versionMapping {
+                    usage('java-api') {
+                        fromResolutionOf('runtimeClasspath')
+                    }
+                    usage('java-runtime') {
+                        fromResolutionResult()
+                    }
+                }
             }
         }
     }
