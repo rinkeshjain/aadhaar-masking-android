@@ -14,6 +14,10 @@ import java.net.URI
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
+
+object MaskTest {
+    val docList = listOf("Aadhaar", "PAN","DL")
+}
 class MaskingManager {
     companion object {
         suspend fun processImageForMasking(context: Context, imageUri: Uri): File {
