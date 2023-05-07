@@ -1,12 +1,9 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+
     id 'maven-publish'
 }
-
-group = 'com.github.rinkeshjain'
-version = '1.0'
-
 
     publishing {
 
@@ -19,7 +16,7 @@ version = '1.0'
                 artifactId = "aadhaar-masking-android"
                 version = "0.0.1"
                 afterEvaluate {
-
+                        from components.release
                 }
             }
         }
@@ -54,11 +51,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '17'
+        jvmTarget = '1.8'
     }
 }
 
@@ -66,8 +63,8 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'com.google.android.gms:play-services-mlkit-text-recognition:19.0.0'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
