@@ -9,7 +9,12 @@ Aadhaar Masking Library lets you mask the first 8-digits of your Aadhaar number,
 
 ## Demo
 
-Insert gif or link to demo
+
+![Sample](media/masked-aadhaar-1653820165.jpg)
+
+![Sample](media/record.gif)
+
+![Sample](media/Adhaar-Card-Sample.png)
 
 
 ## Installation
